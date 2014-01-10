@@ -245,9 +245,7 @@ def _getDOMElements(item, name, attrs):
 
     if len(lst) == 0 and attrs == {}:
         log("No list found, trying to match on name only", 3)
-        lst = re.compile('(<' + name + '>)', re.M | re.S).findall(item)
-        if len(lst) == 0:
-            lst = re.compile('(<' + name + ' .*?>)', re.M | re.S).findall(item)
+        lst = re.compile('(<' + name + ' .*?>)', re.M | re.S).findall(item)
 
     log("Done: " + str(type(lst)), 3)
     return lst
